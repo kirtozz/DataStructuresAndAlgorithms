@@ -1,5 +1,5 @@
 # 数据结构与算法的读书笔记
-_前言：此读书笔记以《秒懂算法》为框架总结，大致介绍了数组、链表、树和图等基本数据结构，辅以12th蓝桥杯省赛真题验证。写来为准备14th蓝桥杯软件C/C++组,并首次尝试使用markdown写作我的第一篇博客上传至我的github repository。若有幸被其他读者所观，诸多疏漏之处还望海涵，承蒙有心者斧正。_
+_前言：此读书笔记以《秒懂算法》为框架总结，大致介绍了数组、链表、树和图等基本数据结构，辅以12th蓝桥杯省赛真题验证。写来为准备14th蓝桥杯软件C/C++组,并首次尝试使用markdown写作我的第一篇博客上传至我的github repository。此笔记并不面向编程零基础的同学，可供想学习数据结构与算法的同学预习和梳理。若有幸被其他读者所观，诸多疏漏之处还望海涵，承蒙有心者斧正。_
 
 ---
 ### 数据结构与算法的个人理解
@@ -20,9 +20,10 @@ _前言：此读书笔记以《秒懂算法》为框架总结，大致介绍了�
     _用处：学习数据有效存储的方法，处理具有复杂关系的数据。_
 
 ---
-### [用大O记法来优化代码](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/BigO.md)
 
 ### [从有序数组开始](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/Array.md)
+
+### [用大O记法来优化代码](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/BigO.md)
 
 ### [神奇的哈希表](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/Hashtable.md)
 
@@ -41,7 +42,8 @@ _前言：此读书笔记以《秒懂算法》为框架总结，大致介绍了�
 ### [各种小算法的汇总](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
 
 ---
-**_献给自己和某个可能需要的人  <font size="2">2023.2.18_</font>**
+**_献给自己和某个可能需要的人:joy: 
+<font size="2">2023.2.18_</font>**
 
 <font size="2"> 未经允许，严禁转载  
 作者电邮: cn.kirtozz@gmail.com </font>
