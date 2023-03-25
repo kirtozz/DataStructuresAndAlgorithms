@@ -37,10 +37,11 @@ _前言：此读书笔记以《秒懂算法》为框架总结，大致介绍了�
 
 ### [堆和字典树](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/HeapAndDictionaryTree.md)
 
-### [连接万物的图](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/Graph.md)
+### [连接万物的图](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/Map.md)
 
 ### [各种小算法的汇总](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
 
+### [测试使用](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/TestFile.md)
 ---
 **_献给自己和某个可能需要的人:joy: 
 <font size="2">2023.2.18_</font>**
