@@ -2,7 +2,7 @@
 
 > 作者时间精力实在有限，算法实现尽量全部使用C/C++。倘若有心者想使用Py、Java和Ruby等其他语言实现，完善此页。可pull requests此仓库,谨祝诸君共勉。
 
-<a href='#BinarySearch' >二分查找 Array.1</a>
+<a href='#BinarySearch' >二分查找 Array.1</a>    
 <a href='#BubbleSort' >冒泡排序 BigO.1</a>
 
 
