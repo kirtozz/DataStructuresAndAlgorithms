@@ -8,7 +8,7 @@ _衡量算法效率的主要指标就是算法需要的步骤数。_
 
  _量化线性查找效率更有效的方法，就是说它**查找数组中的N个元素需要N步**_。
 
- 为了让时间复杂度的讨论更简单，计算机科学家从数学世界里借用了一个概念，这个概念就是大O记法。这种正式表述让我们考研轻松地把算法按照效率分门别类，并与人交流。
+ 为了让时间复杂度的讨论更简单，计算机科学家从数学世界里借用了一个概念，这个概念就是大O记法。这种正式表述让我们可以轻松地把算法按照效率分门别类，并与人交流。
 
  _在最坏的情况下，数组中有多少元素，线性查找就需要多少步。正如先前所述：对于有N个元素的数组，线性查找最多需要N步，用大O记法来表示就是：O(N)，读作“ON”或者“N阶”。_
 
@@ -22,15 +22,60 @@ _衡量算法效率的主要指标就是算法需要的步骤数。_
 ![BigO1.png](/pictures/BigO1.png "不同复杂度算法的巨大差异")
 
 ---
-#### 用大O给代码提速
+#### 用大O给代码提速    
 
-- [冒泡排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
+大O记法可以让你和**现有的一般算法**做比较，并思考这个算法到底是快呢还是慢？如果你发现直接的算法比较“慢”，那么可以回头看看能否优化得更快。虽然未必有优化的空间，但至少值得思考。   
+下面我们会写一些解决实际问题的小算法(全文经典算法会汇总到![此处]( https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md) )，再用大O来评估其复杂度，然后看看能否进行优化，提高算法效率。   
+
+_已知一个无序数组，如何排序才能使其中的值按顺序排列？_   
+
+接下来介绍几种排序算法。
+
+- [冒泡排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)    
+  
+所谓冒泡排序，我自己理解的就是 **“大数”沉淀下去，“小数”冒泡升起** 。这里的“大数小数”并不是固定的大或小，而是由代码里的判断判断条件决定升序降序。这里没看懂没关系，详见代码。下图用动图演示冒泡排序
+
+![BigO2.png](/pictures/BigO2.webp "冒泡原理")
+     
+
+_冒泡排序的效率_   
+
+冒泡排序有两类重要的步骤   
+- [ ] **比较**:比较两个数的大小。   
+- [ ] **交换**:交换顺序错误的数。     
+ 
+例子中的数组有**5个**元素  
+
+>_**先分析比较**_    <font size="2">   
+>回顾第**一**次遍历，可以知道我们做了**4**次两两比较。   
+>第**二**次遍历，只需要**3**次比较，因为在第一次遍历后，最后一个数的位置正确，所以无需比较最后两个数了。   
+>第**三**次遍历需要**2**次比较，而第四次遍历只需要**1**次比较。    
+>所以总计需要**4+3+2+1=10**次比较。   </font>     
+**对于有N个元素，需要(N-1)+(N-2)+(N-3)+...+1次比较**     
+
+>_**再分析交换**_     <font size="2">   
+>假设是最坏的情况，数组按降序排列（和我们的目标正相反），每次比较都需要交换。因此这种情况需要**10次比较和10次交换**，共计**20**步。      </font>      
+
+因此对于总体情况，有5个元素倒序排列的数组，一共需要4+3+2+1=10次比较，10次比较又需要10次交换。总计20步。有10个元素倒序排列的数组，一共需要9+8+...+1=45次比较以及45次交换，总计90步。如果数组有20个值，那么需要190次比较，大约190次交换，共计380步。   
+
+![BigO2.png](/pictures/BigO2.png "冒泡排序步骤数")
+
+因此，冒泡排序的效率其实并不高，随着元素增加，步数呈**平方**增长。    
 
 
-- [选择排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
+_因为冒泡排序处理N个值需要**N^2^步**，所以它的效率是**O(N^2^)**。_    
+
+![BigO3.png](/pictures/BigO3.png "冒泡排序步骤数")
+
+O(N^2^)是一个效率相对低的算法，**O(N^2^)** 也被称为**平方时间**。    
 
 
-- [插入排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
+---
+
+- [选择排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)          
+
+
+- [插入排序](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)          
 
 
 
