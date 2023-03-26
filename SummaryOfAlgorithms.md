@@ -4,11 +4,12 @@
 
 <a href='#BinarySearch' >二分查找 Array.1</a>    
 <a href='#BubbleSort' >冒泡排序 BigO.1</a>     
-<a href='#SelectSort' >选择排序 BigO.2</a>     
+<a href='#SelectSort' >选择排序 BigO.2</a>
+<a href='#InsertSort' >插入排序 BigO.3</a>     
 
 
 
-<span id="BinarySearch">二分查找</span>
+<span id="BinarySearch">二分查找</span>    
 ~~~
 int binary_search(int arr[], int n, int search_value)
 {
@@ -17,7 +18,7 @@ int binary_search(int arr[], int n, int search_value)
   int mid, temp;
   while (lower <= upper)
   {
-    mid = (lower + upper) / 2;
+    mid = (lower + upper) / 2;       //利用编程语言的向下取整
     temp = arr[mid];
     if (search_value == temp)
       return mid;
@@ -30,11 +31,11 @@ int binary_search(int arr[], int n, int search_value)
 }
 ~~~
 
-<span id="BubbleSort">冒泡排序</span>
+<span id="BubbleSort">冒泡排序</span>    
 ~~~
 void bubble_sort(int arr[], int n)
 {
-  int i, t, flag = 0; // flag是标志位
+  int i, t, flag = 0;         // flag是标志位
   while (flag != 1)
   {
     flag = 1;
@@ -51,14 +52,14 @@ void bubble_sort(int arr[], int n)
 }
 ~~~    
 
-<span id="SelectSort">选择排序</span>
+<span id="SelectSort">选择排序</span>   
 ~~~   
 void select_sort(int arr[], int n)
 {
   int i, j, t, MinIndex;
   for (i = 0; i < n - 1; i++)
   {
-    MinIndex = i;
+    MinIndex = i;                //“擂台主”  
     for (j = i + 1; j < n; j++)
     {
       if (arr[j] < arr[MinIndex])
@@ -73,3 +74,25 @@ void select_sort(int arr[], int n)
   }
 }
 ~~~     
+
+<span id="InsertSort">插入排序</span>   
+~~~
+void insert_sort(int arr[], int n)
+{
+  int i, j, temp;
+  for (i = 1; i < n; i++)
+  {
+    temp = arr[i];
+    j = i - 1;
+    while (j >= 0)
+      if (arr[j] > temp)
+      {
+        arr[j + 1] = arr[j];
+        j = j - 1;
+      }
+      else
+        break;
+    arr[j + 1] = temp;
+  }
+}
+~~~
