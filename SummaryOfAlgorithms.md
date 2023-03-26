@@ -4,7 +4,7 @@
 
 <a href='#BinarySearch' >二分查找 Array.1</a>    
 <a href='#BubbleSort' >冒泡排序 BigO.1</a>     
-<a href='#SelectSort' >选择排序 BigO.2</a>
+<a href='#SelectSort' >选择排序 BigO.2</a>    
 <a href='#InsertSort' >插入排序 BigO.3</a>     
 
 
