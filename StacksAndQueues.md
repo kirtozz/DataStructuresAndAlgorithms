@@ -9,9 +9,9 @@
 - [栈](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)
 
 栈相比于数组的3个限制：    
-- [ ] 数据只能从栈末插入。  
-- [ ] 数据只能从栈末删除。  
-- [ ] 只能读取栈的最后一个元素。    
+- [ ] 数据只能从**栈末**插入。  
+- [ ] 数据只能从**栈末**删除。  
+- [ ] 只能读取栈的**最后**一个元素。    
 
 总结概括上面的特点就是——后进先出（[LIFO](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)）。可以理解成叠盘子，我们操作盘子只能移动最上面的盘子。    
 栈的开头叫**栈尾**，栈的末尾称为**栈顶**。    
@@ -21,20 +21,23 @@
 ![SAQ1.png](/pictures/SAQ1.png "栈的示意图")    
 
 ~~~
+typedef char ElemType;
 typedef struct stack
-{   
-	char  *bottom;    //  栈不存在时值为NULL  
-	char  *top;       //  栈顶指针  
-	int   stacksize ;     //  当前已分配空间，以元素为单位  
-}Stack ;
+{
+	ElemType *bottom;           //  栈不存在时值为NULL
+	ElemType *top;	            //  栈顶指针
+	int stacksize;	            //  当前已分配空间，以元素为单位
+} Stack;
 
-void init(Stack *S){}      //初始化
+void init(Stack *) {}           // 初始化
 
-void push(Stack *S,char *a){}    //压栈
+void push(Stack *, ElemType) {} // 压栈
 
-void pop(Stack *S,char *a){}     //出栈
+void pop(Stack *) {}            // 出栈
 
-void read(Stack *S,char *a){}    //读取栈顶元素
+ElemType read(Stack *) {}       // 读取栈顶元素
+
+void ShowAll(Stack *){}         //遍历所有元素
 ~~~
 
 _既然栈是一个受限制的数组，那么数组就可以胜任栈的所有工作，那么栈又有什么优势呢？_
@@ -47,3 +50,38 @@ _既然栈是一个受限制的数组，那么数组就可以胜任栈的所有�
 ---
 
 - [队列](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)     
+
+队列相比于数组也有3个限制：    
+- [ ] 数据只能插入队列**末尾**（与栈一样）。  
+- [ ] 只能从队列**前端**删除数据（与栈相反）。  
+- [ ] 只能读取队列的**第一个**数据（与栈相反）。    
+
+这就是队列的先进先出（[FIFO](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)）。可以理解成叠盘子，我们操作盘子只能移动最上面的盘子。    
+
+向队列插入新值叫**入队**，从前端移除元素称为**出队**。   
+
+
+![SAQ2.png](/pictures/SAQ2.png "栈的示意图")    
+
+~~~
+typedef char ElemType;
+typedef struct queue
+{
+	ElemType Queue_array[]; 	   // 数据部分，用数组
+	int front;					   // 队首的位置
+	int rear;					   // 队尾的位置
+} Queue;
+
+void init(Queue *) {} // 初始化
+
+void insert(Queue *, ElemType) {} // 入队
+
+void pop(Queue *) {} 			  // 出队
+
+ElemType read(Queue *) {} 		  // 读取队首元素
+
+void ShowAll(Queue *) {} 	      // 遍历所有元素
+~~~
+
+队列在很多应用中很常见，比如[打印机](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)的打印队列和网络应用中的后台任务。   
+队列还是处理异步请求的完美工具，他们可以确保按顺序处理请求，队列也常用来模拟现实世界中需要按顺序处理时间的场景，比如飞机等待起飞或者病人看诊等。
