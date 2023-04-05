@@ -24,20 +24,20 @@
 typedef char ElemType;
 typedef struct stack
 {
-	ElemType *bottom;           //  栈不存在时值为NULL
-	ElemType *top;	            //  栈顶指针
-	int stacksize;	            //  当前已分配空间，以元素为单位
+	ElemType *bottom; //  栈不存在时值为NULL
+	ElemType *top;	  //  栈顶指针
+	int stacksize;	  //  当前已分配空间，以元素为单位
 } Stack;
 
-void init(Stack *) {}           // 初始化
+void init(Stack *) {} // 初始化
 
 void push(Stack *, ElemType) {} // 压栈
 
-void pop(Stack *) {}            // 出栈
+void pop(Stack *) {} // 出栈
 
-ElemType read(Stack *) {}       // 读取栈顶元素
+ElemType read(Stack *) {} // 读取栈顶元素
 
-void ShowAll(Stack *){}         //遍历所有元素
+void ShowAll(Stack *) {} // 遍历所有元素
 ~~~
 
 _既然栈是一个受限制的数组，那么数组就可以胜任栈的所有工作，那么栈又有什么优势呢？_
@@ -61,26 +61,30 @@ _既然栈是一个受限制的数组，那么数组就可以胜任栈的所有�
 向队列插入新值叫**入队**，从前端移除元素称为**出队**。   
 
 
-![SAQ2.png](/pictures/SAQ2.png "栈的示意图")    
+![SAQ2.png](/pictures/SAQ2.png "队列的示意图")    
 
+队列不同于栈，出栈是在末尾，而出队是在开头。若实现的顺序队列是直直的线性结构，队头指针向后面移动，前面已分配的内存空间会被**虚假的地释放**，若一直出队到队尾，就溢出了，且**只能溢出一次**，为了解决浪费问题，我们采用循环队列的实现。（逻辑上的循环，顺序存储物理上实际还是线性结构）            
+
+![SAQ3.png](/pictures/SAQ3.png "循环队列示意图")
 ~~~
+#define MAX_QUEUE_SIZE 6
 typedef char ElemType;
 typedef struct queue
 {
-	ElemType Queue_array[]; 	   // 数据部分，用数组
-	int front;					   // 队首的位置
-	int rear;					   // 队尾的位置
+	ElemType Queue_array[MAX_QUEUE_SIZE]; // 数据部分，用数组
+	int front;				// 队首的位置
+	int rear;				// 队尾的位置
 } Queue;
 
 void init(Queue *) {} // 初始化
 
 void insert(Queue *, ElemType) {} // 入队
 
-void pop(Queue *) {} 			  // 出队
+void delete(Queue *) {} // 出队
 
-ElemType read(Queue *) {} 		  // 读取队首元素
+ElemType read(Queue *) {} // 读取队首元素
 
-void ShowAll(Queue *) {} 	      // 遍历所有元素
+void ShowAll(Queue *) {} // 遍历所有元素
 ~~~
 
 队列在很多应用中很常见，比如[打印机](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/SummaryOfAlgorithms.md)的打印队列和网络应用中的后台任务。   
