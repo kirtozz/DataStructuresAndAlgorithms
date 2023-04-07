@@ -10,7 +10,8 @@
     <a href='#StackInSequence' >LIFO 栈的顺序存储实现 SAQ.1</a>        
     <a href='#QueueInSequence' >FIFO 队列的顺序存储实现 SAQ.2</a>      
     
-[代码优化实例与具体数据结构实战](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/OptimizeExps.md) 
+[代码优化实例与具体数据结构实战](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/OptimizeExps.md)            
+[蓝桥往年真题试做](https://github.com/kirtozz/DataStructuresAndAlgorithms/blob/master/LQPastPapers.md)     
 
 ---
 
